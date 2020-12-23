@@ -9,7 +9,7 @@
         <?= "Hello World" ?>
     </h1>
 
-    <p>
+    <div>
         <?php
         
         /*
@@ -24,9 +24,8 @@
 
         echo 'My name is ' . NAME . '!';
         ?>
-    </p>
-
-    <p>
+    </div>
+    <div>
         <?php
             // Use 2 forward-slash for a single line comment.
 
@@ -43,15 +42,15 @@
 
             echo "My age is $age.";        
         ?>
-    </p>
-    <p>
+    </div>
+    <div>
         <?php
             // Use backslash to escape characters; single quotes can only escape another single quote, double quotes recognize other escapes
 
             echo 'This site\'s made with PHP.';
         ?>
-    </p>
-    <p>
+    </div>
+    <div>
         <?php
             // Define and print an indexable array
 
@@ -65,8 +64,8 @@
 
             echo '<p>' . $famous_cats[2] . '</p>';
         ?>
-    </p>
-    <p>
+    </div>
+    <div>
         <?php
             // Define and print an associative array
 
@@ -83,8 +82,8 @@
             print_r($cat_owners);
             echo '</pre>';
         ?>
-    </p>
-    <p>
+    </div>
+    <div>
         <?php
             // Define and print an multidimensional array
 
@@ -119,10 +118,10 @@
             echo '</pre>';
 
             echo '<p>';
-            echo $famous_cats[0] . '\'s favorite thing is ' . $cat_data['Maru']['favorite thing'] . '.';
+            echo $famous_cats[0] . '\'s most <i>favorite</i> thing is ' . $cat_data['Maru']['favorite thing'] . '.';
             echo '</p>';
         ?>
-    </p>
+    </div>
 </body>
 </html>
 
