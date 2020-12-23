@@ -20,8 +20,9 @@
 
         define('NAME', 'Leonor');
 
-        echo "My name is ";
-        echo NAME;
+        // Strings inside single quotes are not processed by PHP before output, making them slightly more efficient. Concat onto these strings using .
+
+        echo 'My name is ' . NAME . '!';
         ?>
     </p>
 
@@ -38,9 +39,88 @@
 
             $age = 32;
 
-            // Use double quotes to interpolate variable in a string
+            // Use double quotes to when you need to escape a character or interpolate variable in a string; PHP processes content of stirng before output
 
-            echo "My age is $age";        
+            echo "My age is $age.";        
+        ?>
+    </p>
+    <p>
+        <?php
+            // Use backslash to escape characters; single quotes can only escape another single quote, double quotes recognize other escapes
+
+            echo 'This site\'s made with PHP.';
+        ?>
+    </p>
+    <p>
+        <?php
+            // Define and print an indexable array
+
+            $famous_cats = array('Maru', 'Grumpy Cat', 'Kitten');
+
+            print_r($famous_cats);
+
+            $famous_cats[] = 'Lil BUB';
+
+            print_r($famous_cats);
+
+            echo '<p>' . $famous_cats[2] . '</p>';
+        ?>
+    </p>
+    <p>
+        <?php
+            // Define and print an associative array
+
+            $cat_owners = array(
+                'Leonor' => 'Kitten', 
+                'Dude' => 'Lil BUB',
+                'Matt' => 'Maru',
+                'Tabatha' => 'Grumpy Cat',
+            );
+
+            // pre HTML tag for displaying preformatted text
+
+            echo '<pre>';
+            print_r($cat_owners);
+            echo '</pre>';
+        ?>
+    </p>
+    <p>
+        <?php
+            // Define and print an multidimensional array
+
+            $cat_data = array(
+                'Kitten' => array(
+                    'age' => 8,
+                    'owner' => 'Leonor',
+                    'favorite thing' => 'Sleeping on pillows',
+                ),
+                'Maru' => array(
+                    'age' => 4,
+                    'owner' => 'Matt',
+                    'favorite thing' => 'Boxes',
+                ),
+                'Grumpy Cat' => array(
+                    'age' => 11,
+                    'owner' => 'Tabatha',
+                    'favorite thing' => 'Throwin\' shade',
+                ),
+                'Lil BUB' => array(
+                    'age' => 3,
+                    'owner' => 'Dude',
+                    'favorite thing' => 'Just being adorable',
+                ),
+
+            );
+
+            // Use chained keys to access data in multidimensional arrays
+
+            echo '<pre>';
+            print_r($cat_data);
+            echo '</pre>';
+
+            echo '<p>';
+            echo $famous_cats[0] . '\'s favorite thing is ' . $cat_data['Maru']['favorite thing'] . '.';
+            echo '</p>';
         ?>
     </p>
 </body>
