@@ -122,6 +122,20 @@
             echo '</p>';
         ?>
     </div>
+
+    <div>
+        <?php
+        $is_logged_in = false;
+
+        if ( $is_logged_in && NAME !== null ) {
+            echo 'Welcome, ' . NAME . '!';
+        } else if ( $is_logged_in ) {
+            echo 'Welcome, user!';
+        } else {
+            echo 'Please log in.';
+        }
+        ?>
+    </div>
 </body>
 </html>
 
