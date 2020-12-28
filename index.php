@@ -125,7 +125,15 @@
 
     <div>
         <?php
-        $is_logged_in = false;
+        // Booleans, if/else, ternary operator, and logic operators are basically the same as JS and Ruby
+
+        /* 
+            Note on == syntax in if statements: Use Yoda syntax (variable on right of ==) to avoid accidental assignment
+            if ( 10 == $v ) { do a thing } --- Good, no chance of accidental assignment, sounds like somthing Yoda would say
+            if ( $v == 10 ) { do a thing } --- Bad, mistype == as = and it will always evaluate as true and reassign $v to 10
+        */
+
+        $is_logged_in = true;
 
         if ( $is_logged_in && NAME !== null ) {
             echo 'Welcome, ' . NAME . '!';
@@ -133,6 +141,38 @@
             echo 'Welcome, user!';
         } else {
             echo 'Please log in.';
+        }
+        ?>
+    </div>
+
+    <div>
+        <?php if ( $is_logged_in ) : // Alternative if/else syntax with colon, can be useful for large block of HTML inside an if statement ?>
+            <h1>Here's a Header</h1>
+            <h2>Plus a sub header</h2>
+            <p>Wow this is a lot of content that is only displayed if logged in.</p>
+            <p>It would be hard to read this wrapped in curly braces!</p>
+            <p>The alternative syntax makes it cleaner and easier to read.</p>
+            <h5>Nice!</h5>
+        <?php endif; ?>
+    </div>
+
+    <div>
+        <?php
+        $min = 0;
+        $max = 50;
+        $guess = 12;
+        $num = 10;
+
+        if ( $guess >= $min && $guess <= $max ) {
+            if ( $guess == $num ) {
+                echo 'Wow, you got it right!';
+            } else if ( $guess > $num ) {
+                echo 'Nope, try lower.';
+            } else {
+                echo 'Nope, try higher.';
+            }
+        } else {
+            echo 'Your guess it outside the range.';
         }
         ?>
     </div>
