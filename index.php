@@ -76,11 +76,11 @@
                 'Tabatha' => 'Grumpy Cat',
             );
 
-            // pre HTML tag for displaying preformatted text
+            // foreach loop with key value variables
 
-            echo '<pre>';
-            print_r($cat_owners);
-            echo '</pre>';
+            foreach( $cat_owners as $owner => $cat ) {
+                echo "<p>$cat belongs to $owner.";
+            };
         ?>
     </div>
     <div>
