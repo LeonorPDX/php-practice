@@ -188,6 +188,23 @@
 
         ?>
     </div>
+
+    <div>
+        <?php
+        
+        $current = 1;
+        $next = null;
+        $previous = 0;
+
+        while ( $current <= 200 ) {
+            echo '<p>' . $current . '</p>';
+            $next = $current + $previous;
+            $previous = $current;
+            $current = $next;
+        }
+
+        ?>
+    </div>
 </body>
 </html>
 
