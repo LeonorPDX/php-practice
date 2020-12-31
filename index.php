@@ -180,11 +180,21 @@
     <div>
         <?php
 
-        $a = (14 + 82 - (32 / 2) )**2;
-        $b = 18 * ((3 / 6) - 9) * 10;
-        $c = 5 * ((12 / 2) - (8 * 4) + (12 * 6));
-        $array = array( $a, $b, $c );
-        print_r( $array );
+        function is_palindrome( $str ) {
+            // Convert input to lowercase and remove spaces
+            $str = str_replace( ' ', '', strtolower( $str ) );
+
+            // Check if sanitized input is the same reversed, returns boolean
+            return ( $str == strrev( $str ) );
+        }
+
+        $input = 'Taco Cat';
+        
+        if( is_palindrome( $input ) ) {
+            echo "<p>$input is a palindrome, neat!</p>";
+        } else {
+            echo "<p>$input is not a palindrome.</p>";
+        }
 
         ?>
     </div>
