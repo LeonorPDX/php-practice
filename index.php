@@ -261,6 +261,13 @@
         echo '</pre>';
     ?>
     </div>
+
+    <div>
+    <?php
+    require 'variable.php';
+    echo $include_var
+    ?>
+    </div>
 </body>
 </html>
 
