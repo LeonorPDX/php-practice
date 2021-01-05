@@ -200,6 +200,27 @@
     </div>
 
     <div>
+    <?php
+        // Function must return a positive integer
+        function pos_multiply( $a, $b ) {
+            $x = $a * $b;
+            if ( $x < 0 ) {
+                throw new Exception( "The result is not positive." );
+            } else {
+                return $x;
+            }
+        }
+
+        try {
+            echo pos_multiply( -5, 2 );
+        } catch( Exception $e ) {
+            echo $e->getMessage();
+        }
+    
+    ?>
+    </div>
+
+    <div>
         <?php
         
         $current = 1;
