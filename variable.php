@@ -1,3 +1,5 @@
 
 <?php
-$include_var = "This is from another file";
+$title = 'Learning PHP Template Challenge';
+$description = 'Description goes here.';
+$author = 'Joe Casabona';
